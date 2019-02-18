@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="bluetooth.cw.com.bluetoothcontroler.ControlerActivity">
+
+    <LinearLayout
+        android:id="@+id/search_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"></LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:orientation="horizontal"
+            android:background="#EEE9E9">
+            <TextView
+                android:layout_alignParentLeft="true"
+                android:id="@+id/device_title"
+                android:textSize="16sp"
+                android:layout_marginLeft="10dp"
+                android:text="设备"
+                android:fontFamily="sans-serif-light"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ProgressBar
+                android:layout_toRightOf="@id/device_title"
+                android:id="@+id/scan_progress"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:indeterminateDrawable="@drawable/wifi_scanning_progress"
+                android:indeterminateDuration="900"
+                android:layout_marginLeft="20dp"/>
+            <Button
+                android:id="@+id/search_btn"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="10dp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/btn_bg"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:text="扫描"/>
+
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"></LinearLayout>
+        <ListView
+            android:id="@+id/device_list"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></ListView>
+
+
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/control_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/black"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="#EEE9E9"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/key_power"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:src="@drawable/icon_power" />
+
+                <ImageButton
+                    android:id="@+id/key_volume_down"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:src="@drawable/icon_volume_up" />
+
+                <ImageButton
+                    android:id="@+id/key_volume_up"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:src="@drawable/icon_volume_down" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/black"></LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/direction_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <bluetooth.cw.com.bluetoothcontroler.RoundMenuView
+                    android:id="@+id/roundView"
+                    android:layout_centerInParent="true"
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
+                    android:visibility="invisible"/>
+
+                <Button
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/search_or_connect_btn"
+                    android:layout_alignTop="@+id/roundView"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="100dp"
+                    android:background="@drawable/btn_bg"
+                    android:text="连接CW P1"
+                    android:textColor="@android:color/white"
+                    android:visibility="visible" />
+            </RelativeLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:gravity="center_vertical"
+            android:background="#EEE9E9"
+            android:layout_alignParentBottom="true">
+            <ImageButton
+                android:id="@+id/key_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="#00000000"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:src="@drawable/icon_menu" />
+            <ImageButton
+                android:id="@+id/key_home"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="#00000000"
+                android:layout_margin="10dp"
+                android:src="@drawable/icon_home"/>
+            <ImageButton
+                android:id="@+id/key_back"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="#00000000"
+                android:layout_margin="10dp"
+                android:src="@drawable/icon_back"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</FrameLayout>

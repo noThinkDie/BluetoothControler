@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    >
+
+    <Button
+        android:id="@+id/central"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#1976D2"
+        android:onClick="onClick"
+        android:textSize="20sp"
+        android:text="中央\n Central" />
+
+    <Button
+        android:id="@+id/periphera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#FF5252"
+        android:onClick="onClick"
+        android:textSize="20sp"
+        android:text="周边\n Periphera" />
+
+</LinearLayout>

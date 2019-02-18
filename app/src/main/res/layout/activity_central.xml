@@ -1,0 +1,93 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <LinearLayout
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_scanBT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="scanClick"
+            android:text="扫描经典蓝牙" />
+
+        <Button
+            android:id="@+id/btn_scanBLE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="scanClick"
+            android:text="扫描BLE" />
+
+        <Button
+            android:id="@+id/btn_conn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="scanClick"
+            android:text="MAC地址连接" />
+    </LinearLayout>
+
+    <Switch
+        android:id="@+id/sw_auto_conn"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_below="@id/btn"
+        android:checked="true"
+        android:text="自动连接开关" />
+
+    <ProgressBar
+        android:id="@+id/pb_connect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/sw_auto_conn"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/lv_devicelist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sw_auto_conn" />
+
+    <RelativeLayout
+        android:id="@+id/rl_sendData"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/lv_devicelist"
+        android:visibility="gone" >
+
+        <EditText
+            android:id="@+id/et_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/btn_send"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/btn_send"
+            android:text="数据"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/btn_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:enabled="false"
+            android:onClick="scanClick"
+            android:text="发送" />
+
+        <ListView
+            android:id="@+id/lv_datalist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/et_text" />
+    </RelativeLayout>
+
+</RelativeLayout>
